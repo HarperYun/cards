@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css.css">
-  <title>i Tai gi</title>
-  
+  <title>愛Tai語 </title>
+
 </head>
+
 <body>
   <div id="game"></div>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+    integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
+    crossorigin='anonymous'></script>
   <script>
     // 產生卡片
-    for (let i=0; i<16; i++) {
+    for (let i = 0; i < 16; i++) {
       $('#game').append(`
         <div class="card">
           <div class="card-front"></div>
@@ -37,7 +41,7 @@
 
     // -----------------------------------------------------------
 
-    for (let i=0; i<16; i++) { //i : 0 1 2 ...15
+    for (let i = 0; i < 16; i++) { //i : 0 1 2 ...15
       // 決定數字
       const num = i % 8 + 1 //1.2.3...8
 
@@ -47,13 +51,13 @@
         $('.card').eq(i).find('.card-front').css('background-image', `url(./台語card/${num}T.png)`)
       }
       $('.card').eq(i).attr('data-card', num) // data-card='num'
-      
+
       // 打散
-      const target = Math.round(Math.random() * 15) 
-      $('.card').eq(target).insertAfter( $('.card').eq(i) )
+      const target = Math.round(Math.random() * 15)
+      $('.card').eq(target).insertAfter($('.card').eq(i))
     }
 
-    
+
 
     // ---------------------------------------------------------
 
@@ -92,4 +96,5 @@
     })
   </script>
 </body>
+
 </html>
